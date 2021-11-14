@@ -1,15 +1,29 @@
 import './App.css';
-import HomePage from './components/page/homepage/HomePage.component';
+import HomePage from './components/pages/homepage/HomePage.component';
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import NotFound from './components/notFound/NotFound';
+
+
+const HatPage =(props) => {
+  console.log(props)
+  return (
+    <div>
+      <h1> Hats Page </h1>
+      <button onClick={() => props.history.goBack()}> Go back </button>
+    </div>
+  );
+
+}
 
 function App() {
   return (
     <div>
-      {/* <HomePage /> */}
-      <Routes>
-        <Route exact path='/' element={<HomePage />} />
-      </Routes>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route path='/hats' component={HatPage} />
+        <Route path='*' component={NotFound} />
+      </Switch>
     </div>
   );
 }
