@@ -1,10 +1,10 @@
 import './App.css';
-import HomePage from './components/pages/homepage/HomePage.component';
+import HomePage from './pages/homepage/HomePage.component';
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import NotFound from './components/notFound/NotFound';
-import ShopPage from './components/shop/Shop.component';
+import ShopPage from './pages/shop/Shop.component';
 import Header from './components/header/Header';
+import SignInAndSignup from './pages/signin-and-signup/SignInAndSignup';
 
 function App() {
   return (
@@ -13,7 +13,6 @@ function App() {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
-        <Route path='*' component={NotFound} />
       </Switch>
     </div>
   );
