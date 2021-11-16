@@ -3,23 +3,13 @@ import HomePage from './components/pages/homepage/HomePage.component';
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import NotFound from './components/notFound/NotFound';
-import ShopPage from './components/shop/Shop.component'
-
-
-const HatPage =(props) => {
-  console.log(props)
-  return (
-    <div>
-      <h1> Hats Page </h1>
-      <button onClick={() => props.history.goBack()}> Go back </button>
-    </div>
-  );
-
-}
+import ShopPage from './components/shop/Shop.component';
+import Header from './components/header/Header';
 
 function App() {
   return (
     <div>
+      <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route path='/shop' component={ShopPage} />
