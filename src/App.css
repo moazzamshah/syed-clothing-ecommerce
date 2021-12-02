@@ -9,3 +9,7 @@ a {
 a:hover {
   color: #666;
 }
+
+*{
+  box-sizing: border-box;
+}
